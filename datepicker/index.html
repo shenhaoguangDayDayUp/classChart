@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./8week.css" />
+</head>
+
+<body>
+    <div class="main" id="main">
+        <header>
+            <div class="year">
+                <span class="pre" @click="sureYear(1)"><</span>
+                <span>{{ year }} 年 </span>
+                <span class="pre" @click="sureYear(2)">></span>
+            </div>
+            <button @click='setCurrentWeek'>本周</button>
+            <div>{{arr[0].date}} ~ {{arr[6].date}}</div>
+            <div class="month">
+                <div v-for="(item,index) in monthArr" :key="index" :class="{'active':item==month}" @click="sureMonth(item)">
+                    {{ item + 1 }}月
+                    <!-- {{ item }}月 -->
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <span class="pre-week" @click="getData({'value':1})"><</span>
+            <span class="next-week" @click="getData({'value':2})">></span>
+            <div class="wrap">
+                <div v-for="(item,index) in arr" :key="index" :class="{'active':item.date==activeDay,'cur':item.date==today}" @click="sureDay(item.date)">
+                    {{item.date}}
+                    <!-- {{ item.day }} -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

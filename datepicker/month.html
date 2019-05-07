@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size:60px">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./month.css"/>
+    <link rel="stylesheet" href="./8week.css"/>
+
+</head>
+
+<body>
+  <div id="month">
+      <div class="data-center">
+					<button id="prev" @click='prevMonth'></button>
+					<span></span> <span id="date-time">  <div>{{currentYear}} 年 {{currentMonth +1}}   </div></span> <i class="mark-txt"
+                    id="mark-txt" style='display: inline;' @click='resetMonth' >本月</i>
+					<button id="next" @click='nextMonth'></button></button>
+				</div>
+      <div class="calendarMainWrap">
+          <table class="calendarMain">
+            <thead>
+            <tr>
+              <th>星期一</th>
+              <th>星期二</th>
+              <th>星期三</th>
+              <th>星期四</th>
+              <th>星期五</th>
+              <th>星期六</th>
+              <th>星期天</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr v-for='(month,index_month) in rowsInMonth'>
+                  <td v-for='(day,index_day) in month' :class='styleOfDays[index_month*7 + index_day]'>
+                    <span className='date'>{{day}}</span>
+                    <div className="courseWrap"></div>
+                      <!-- {{index_month}}--{{index_day}} -->
+                  </td>
+
+              </tr>
+
+            </tbody>
+          </table>
+
+  </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./month.js"></script>
+</body>
+
+</html>

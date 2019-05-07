@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./jquery-ui.css" />
+    <link rel="stylesheet" href="./8week.css" />
+</head>
+
+<body>
+    <div id="kb-container" style="height: 100%;">
+		<!--S--右边部分-->
+		<div class="kb-right">
+			<div class="databox-title">
+				<div class="data-left">
+					<p class="live-calendar">
+						直播日历&nbsp;&nbsp;&nbsp;<span id="today"></span>
+					</p>
+				</div>
+				<div class="data-right">
+					<span><i class="offline"></i> 线下</span> <span><i
+						class="already"></i> 已上</span> <span><i class="now"></i> 正在/即将</span> <span><i
+						class="future"></i> 未上</span>
+				</div>
+				</br>
+				<div class="data-center">
+					<button id="prev" @click="getData({'value':1})"></button>
+					<span></span> <span id="date-time">  <div>{{arr[0].date}} ~ {{arr[6].date}} </div></span> <i class="mark-txt"
+                    id="mark-txt" v-if='count !=0' style='display: inline;' @click='setCurrentWeek'>本周</i>
+					<button id="next" @click="getData({'value':2})"></button></button>
+				</div>
+			</div>
+			<div class="zt-box"></div>
+			<!-- S--课表 -->
+			<div class="kb-bigbox">
+				<!--周课表-->
+				<div class="kb-style kb-zkb">
+					<!-- 头部日期 -->
+					<div class="bigkb-title">
+			        	 <span v-for='item in arr'>  <i class="date-z">{{item.week}}</i> <em class="date-y">{{item.date}}</em>  </span> 
+                    
+					</div>
+					<!--课程分布-->
+					<div class="subject_box">
+						<!--上午课程-->
+						<div class="sub_top">
+							<div id="Day1" class="sub_top_col top_t">
+
+							
+							</div>
+							<div id="Day2" class="sub_top_col top_t">
+
+								<span></span>
+							</div>
+							<div id="Day3" class="sub_top_col top_t">
+
+								<span></span>
+							</div>
+							<div id="Day4" class="sub_top_col top_t">
+
+								<span></span>
+							</div>
+							<div id="Day5" class="sub_top_col top_t">
+
+								<span></span>
+							</div>
+							<div id="Day6" class="sub_top_col top_t">
+
+								<span></span>
+							</div>
+							<div id="Day7" class="sub_top_col top_t">
+
+								<span></span>
+							</div>
+						</div>
+						<!--下午课程-->
+						<div class="sub_bottom"></div>
+						<!--月课表-->
+						<div class="kb-style kb-ykb" style="display: none">
+							<!-- 头部日期 -->
+							<div class="bigkb-title">
+								<span> <i>周一</i>
+								</span> <span> <i>周二</i>
+								</span> <span> <i>周三</i>
+								</span> <span> <i>周四</i>
+								</span> <span> <i>周五</i>
+								</span> <span> <i>周六</i>
+								</span> <span> <i>周日</i>
+								</span>
+							</div>
+							<!--课程分布-->
+							<div class="subject_box" id="subject_box">
+								<!--上午课程-->
+								<div class="sub_top sub_bottom"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./index2.js"></script>
+</body>
+
+</html>

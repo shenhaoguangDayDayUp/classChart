@@ -1,0 +1,78 @@
+.main {
+    width: 100%;
+    min-width: 443px;
+    border: 1px solid #000;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.year img {
+    width: 20px;
+    vertical-align: middle;
+}
+
+.year span {
+    vertical-align: middle;
+}
+
+.pre {
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.pre-week {
+    float: left;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.next-week {
+    float: right;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.month {
+    height: 40px;
+}
+
+.month>div {
+    float: left;
+    width: 8.3%;
+    line-height: 40px;
+    border: 1px solid;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.month>div.active {
+    border: 1px solid red;
+    color: red;
+}
+
+.wrap {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 50px;
+}
+
+.wrap>div {
+    float: left;
+    width: 14.28%;
+    border: 1px solid #ece1e1;
+    box-sizing: border-box;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.wrap>div.cur {
+    border: 1px solid green;
+    color: green;
+}
+
+.wrap>div.active {
+    border: 1px solid red;
+    color: red;
+}
